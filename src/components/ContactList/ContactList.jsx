@@ -3,7 +3,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 // import { nanoid } from 'nanoid';
 
-export const ContactList = ({ handleDelete }) => {
+export const ContactList = () => {
   const currentContacts = useSelector(state => state.contacts);
   console.log(currentContacts);
 
@@ -18,7 +18,7 @@ export const ContactList = ({ handleDelete }) => {
             id={id}
             name={name}
             number={number}
-            handleDelete={handleDelete}
+            // handleDelete={handleDelete}
           />
         );
       })}

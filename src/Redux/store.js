@@ -74,6 +74,9 @@ const contactSlise = createSlice({
     addContact(state, action) {
       return [...state, action.payload];
     },
+    removeContac(state, action) {
+      return action.payload;
+    },
   },
 });
 
@@ -86,4 +89,4 @@ export const store = configureStore({
 
 // export const
 //Дуструктуризація екшенів
-export const { addContact } = contactSlise.actions;
+export const { addContact, removeContac } = contactSlise.actions;
