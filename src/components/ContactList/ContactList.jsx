@@ -4,13 +4,21 @@ import { useSelector } from 'react-redux';
 // import { nanoid } from 'nanoid';
 
 export const ContactList = () => {
-  const currentContacts = useSelector(state => state.contacts);
-  console.log(currentContacts);
+  const contacts = useSelector(state => state.contacts);
+  const filter = useSelector(state => state.filter);
+
+  const changedList = contacts?.filter(contact =>
+    contact?.name?.toLowerCase().includes(filter.toLowerCase())
+  );
+  console.log('changedList -', changedList);
+
+  // console.log(changedList);
+  // console.log('filterValue - ', filterValue);
 
   // console.log(currentContacts);
   return (
     <ul>
-      {currentContacts.map(item => {
+      {changedList.map(item => {
         const { id, name, number } = item;
         return (
           <ContactItem

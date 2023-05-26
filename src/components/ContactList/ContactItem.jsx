@@ -6,7 +6,7 @@ import { StiledItem } from './ContactItem.styled';
 export function ContactItem({ id, name, number }) {
   const dispatch = useDispatch();
   const currentContacts = useSelector(state => state.contacts);
-  console.log(currentContacts);
+  // console.log(currentContacts);
 
   const handleDelete = id => {
     const updatedContacts = currentContacts.filter(
