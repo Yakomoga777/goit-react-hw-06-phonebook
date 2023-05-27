@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 export const Filter = ({ onFilterInput, value }) => {
   const dispatch = useDispatch();
-  const filterValue = useSelector(state => state.filter);
+  // const filter = useSelector(state => state.filter);
 
   const contacts = useSelector(state => state.contacts);
   // const filterValue = useSelector(state => state.filter);

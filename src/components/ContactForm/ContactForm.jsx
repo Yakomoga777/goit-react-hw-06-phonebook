@@ -7,7 +7,8 @@ import { nanoid } from 'nanoid';
 export const ContactForm = ({ btn }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-
+  const dispatch = useDispatch();
+  const contacts = useSelector(state => state.contacts);
   // Контрольовані імпути
   const handleChange = evt => {
     if (evt.target.name === 'name') {
@@ -16,12 +17,7 @@ export const ContactForm = ({ btn }) => {
     } else if (evt.target.name === 'number') {
       setNumber(evt.target.value);
     }
-    console.log(evt.target.value);
   };
-
-  const dispatch = useDispatch();
-  // const currentContacts = useSelector(state => state);
-  // console.log(currentContacts);
 
   // Сабміт форми
   const onSubmit = evt => {
@@ -31,10 +27,15 @@ export const ContactForm = ({ btn }) => {
     const number = form.elements.number.value;
     const newContact = { name, number, id: nanoid() };
 
-    dispatch(addContact(newContact));
-    // dispatch(addContact(currentContacts));
-
-    console.log('Submit');
+    // перевірка на наявний конткт
+    const includesName = contacts.find(
+      contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
+    );
+    if (!includesName) {
+      dispatch(addContact(newContact));
+    } else {
+      return alert(`${newContact.name} is already in contacts`);
+    }
 
     reset();
   };
