@@ -5,17 +5,15 @@ import { StiledItem } from './ContactItem.styled';
 
 export function ContactItem({ id, name, number }) {
   const dispatch = useDispatch();
-  const currentContacts = useSelector(state => state.contacts);
+  // const currentContacts = useSelector(state => state.contacts);
   // console.log(currentContacts);
 
   const handleDelete = id => {
-    const updatedContacts = currentContacts.filter(
-      contact => contact.id !== id
-    );
-
-    dispatch(removeContac(updatedContacts));
-
-    return updatedContacts;
+    // const updatedContacts = state.contacts.filter(
+    //   contact => contact.id !== action.payload
+    // );
+    console.log(id);
+    dispatch(removeContac(id));
   };
   return (
     <>

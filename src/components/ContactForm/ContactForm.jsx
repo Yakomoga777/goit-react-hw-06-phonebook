@@ -9,6 +9,7 @@ export const ContactForm = ({ btn }) => {
   const [number, setNumber] = useState('');
   const dispatch = useDispatch();
   const contacts = useSelector(state => state.contacts);
+  console.log(contacts);
   // Контрольовані імпути
   const handleChange = evt => {
     if (evt.target.name === 'name') {

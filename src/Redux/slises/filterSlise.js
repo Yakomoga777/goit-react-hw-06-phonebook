@@ -18,3 +18,13 @@ import { configureStore, createSlice } from '@reduxjs/toolkit';
 //     filter: filterSlise.reducer,
 //   },
 // });
+
+export const filterSlise = createSlice({
+  name: 'filter',
+  initialState: '',
+  reducers: {
+    filteredContacts: (state, action) => {
+      return action.payload;
+    },
+  },
+});
