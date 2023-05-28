@@ -1,19 +1,13 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { removeContact } from 'Redux/slises/contactSlise';
-// import { removeContac } from 'Redux/store';
+
 import { StiledItem } from './ContactItem.styled';
 
 export function ContactItem({ id, name, number }) {
   const dispatch = useDispatch();
-  // const currentContacts = useSelector(state => state.contacts);
-  // console.log(currentContacts);
 
   const handleDelete = id => {
-    // const updatedContacts = state.contacts.filter(
-    //   contact => contact.id !== action.payload
-    // );
-    console.log(id);
     dispatch(removeContact(id));
   };
   return (

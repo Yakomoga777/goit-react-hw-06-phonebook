@@ -1,4 +1,4 @@
-import { configureStore, createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 export const contactSlise = createSlice({
   name: 'contacts',
@@ -9,15 +9,14 @@ export const contactSlise = createSlice({
     { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
   ],
   reducers: {
-    addContact: (state, action) => {
-      return [...state, action.payload];
+    addContact(state, action) {
+      state.push(action.payload);
     },
-    removeContact: (state, action) => {
+    removeContact(state, action) {
       const updatedContacts = state.filter(
         contact => contact.id !== action.payload
       );
-      console.log(action.payload);
-      console.log(state);
+
       return updatedContacts;
     },
   },

@@ -9,8 +9,6 @@ export const ContactList = () => {
   const changedList = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
-  console.log('changedList -', changedList);
-  console.log('contacts -', contacts);
 
   return (
     <ul>

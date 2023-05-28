@@ -1,14 +1,10 @@
 import React from 'react';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { filteredContacts } from 'Redux/slises/filterSlise';
 
-export const Filter = ({ onFilterInput, value }) => {
+export const Filter = ({ value }) => {
   const dispatch = useDispatch();
-
-  // const contacts = useSelector(state => state.contacts);
-
-  // console.log('contacts -', contacts);
 
   // Керований інпут фільтра
   const handleChangeFilter = event => {
