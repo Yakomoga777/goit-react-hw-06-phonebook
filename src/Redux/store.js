@@ -52,6 +52,13 @@ import { filterSlise } from './slises/filterSlise';
 //   },
 // });
 
+const persistConfig = {
+  key: 'root',
+  storage,
+};
+
+const persistedReducer = persistReducer(persistConfig, contactSlise.reducer);
+
 export const store = configureStore({
   reducer: {
     // Створення кореневого ред"юсера
@@ -61,8 +68,5 @@ export const store = configureStore({
 });
 
 // export const
-//Дуструктуризація екшенів
-export const { addContact, removeContac } = contactSlise.actions;
-export const { filteredContacts } = filterSlise.actions;
 
-// export let persistor = persistStore(store);
+export const persistor = persistStore(store);

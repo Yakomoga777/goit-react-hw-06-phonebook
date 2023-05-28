@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { StyledForm } from './ContactForm.styled';
-import { addContact } from '../../Redux/store';
+// import { addContact } from '../../Redux/store';
 import { nanoid } from 'nanoid';
+import { addContact } from 'Redux/slises/contactSlise';
 
 export const ContactForm = ({ btn }) => {
   const [name, setName] = useState('');

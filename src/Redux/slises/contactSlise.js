@@ -12,7 +12,7 @@ export const contactSlise = createSlice({
     addContact: (state, action) => {
       return [...state, action.payload];
     },
-    removeContac: (state, action) => {
+    removeContact: (state, action) => {
       const updatedContacts = state.filter(
         contact => contact.id !== action.payload
       );
@@ -22,3 +22,5 @@ export const contactSlise = createSlice({
     },
   },
 });
+
+export const { addContact, removeContact } = contactSlise.actions;

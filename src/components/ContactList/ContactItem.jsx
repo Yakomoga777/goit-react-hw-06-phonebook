@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { removeContac } from 'Redux/store';
+import { removeContact } from 'Redux/slises/contactSlise';
+// import { removeContac } from 'Redux/store';
 import { StiledItem } from './ContactItem.styled';
 
 export function ContactItem({ id, name, number }) {
@@ -13,7 +14,7 @@ export function ContactItem({ id, name, number }) {
     //   contact => contact.id !== action.payload
     // );
     console.log(id);
-    dispatch(removeContac(id));
+    dispatch(removeContact(id));
   };
   return (
     <>

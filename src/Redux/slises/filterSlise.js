@@ -28,3 +28,6 @@ export const filterSlise = createSlice({
     },
   },
 });
+
+//Дуструктуризація екшенів
+export const { filteredContacts } = filterSlise.actions;

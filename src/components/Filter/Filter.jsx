@@ -1,6 +1,7 @@
 import React from 'react';
-import { filteredContacts } from '../../Redux/store';
+
 import { useDispatch, useSelector } from 'react-redux';
+import { filteredContacts } from 'Redux/slises/filterSlise';
 
 export const Filter = ({ onFilterInput, value }) => {
   const dispatch = useDispatch();
